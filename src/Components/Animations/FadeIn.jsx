@@ -18,7 +18,7 @@ const FadeIn = ({children, delay =0, duration=500, threshold=0.1}) => {
       },
     );
     if (elementRef.current) {
-      observer.unobserve(elementRef.current);
+      observer.observe(elementRef.current);
     }
     return () => {
       if (elementRef.current) {
