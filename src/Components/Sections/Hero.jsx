@@ -15,7 +15,7 @@ import {
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
-      {/* <RadialGradientBackground variant="hero"></RadialGradientBackground> */}
+      <RadialGradientBackground variant="hero"></RadialGradientBackground>
       {/* Contant Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-7 lg:px-8 py-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -56,7 +56,7 @@ const Hero = () => {
                 {STATS.map((stat, index) => (
                   <div
                     key={index}
-                    className="text-left border-r border-white/50 pr-10 last:border-r-0"
+                    className="text-left border-r border-white/50 pr-10  last:border-r-0"
                   >
                     <div className="text-2xl font-normal text-primary mb-2 font-mono">
                       {stat.value}
@@ -77,7 +77,7 @@ const Hero = () => {
                   <div className="absolute -inset-0.5 bg-linear-to-r from-primary/20 via-primary/10 to-primary animate-spin-slow rounded-2xl"></div>
                 </div>
                 {/* Image Container */}
-                <div className="relative rounded-2xl overflow-hidden m-px h-[calc(100%-2px)]">
+                <div className="bg-black relative rounded-2xl overflow-hidden m-px h-[calc(100%-2px)]">
                   <img
                     src="/developer.png"
                     alt="Developer at Work"
