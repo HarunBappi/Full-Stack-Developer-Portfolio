@@ -17,7 +17,7 @@ export const SOCIAL_LINKS = {
   facebook: "https://web.facebook.com/HarunBappi68/",
 };
 
-export const STATS = [
+export const ABOUT_STATS = [
   {
     label: "Projects Completed",
     value: "12+",

@@ -2,7 +2,7 @@ import React from "react";
 import RadialGradientBackground from "../Backgrounds/RadialGradientBackground";
 import FadeIn from "../Animations/FadeIn";
 import { ChevronDown, Star } from "lucide-react";
-import { PERSONAL_INFO, STATS } from "../../utilities/constants";
+import { ABOUT_STATS, PERSONAL_INFO} from "../../utilities/constants";
 import { scrollToSection } from "../../Hooks/useScrollSpy";
 import {
   SiMongodb,
@@ -53,7 +53,7 @@ const Hero = () => {
             </FadeIn>
             <FadeIn delay={400}>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-full">
-                {STATS.map((stat, index) => (
+                {ABOUT_STATS.map((stat, index) => (
                   <div
                     key={index}
                     className="text-left border-r border-white/50 pr-10  last:border-r-0"

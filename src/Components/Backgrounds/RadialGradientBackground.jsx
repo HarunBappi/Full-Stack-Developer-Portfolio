@@ -1,7 +1,7 @@
 import React from "react";
 
-const RadialGradientBackground = ({ varient = "hero", gradients = [] }) => {
-  const varients = {
+const RadialGradientBackground = ({ children, variant = "hero", gradients = [] }) => {
+  const variants = {
     hero: [
       {
         position: "top-1 left-1 -translate-x-1/2 -translate-y-1/2",
@@ -60,7 +60,7 @@ const RadialGradientBackground = ({ varient = "hero", gradients = [] }) => {
     ],
   };
   const activeGradients =
-    varient === "custom" ? gradients : varients[varient] || varients.hero;
+    variant === "custom" ? gradients : variants[variant] || variants.hero;
   const generateGradient = (colors) => {
     const colorStops = colors
       .map(({ colors, stop }) => `${colors} ${stop}`)
@@ -68,11 +68,11 @@ const RadialGradientBackground = ({ varient = "hero", gradients = [] }) => {
     return `radial-gradient(circle at center, transparent 0%, transparent 30%, ${colorStops}, transparent 60%, transparent 100%)`;
   };
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none ">
+    <div className="relative inset-0 overflow-hidden">
       {activeGradients.map((gradient, index) => (
         <div
           key={index}
-          className={`absolute ${gradient.position} ${gradient.size} rounded-full`}
+          className={`absolute ${gradient.position} ${gradient.size} rounded-full pointer-events-none `}
           style={{
             background: generateGradient(gradient.colors),
             filter: `blur(${gradient.blur})`,
@@ -80,6 +80,7 @@ const RadialGradientBackground = ({ varient = "hero", gradients = [] }) => {
           }}
         ></div>
       ))}
+      {children}
     </div>
   );
 };
