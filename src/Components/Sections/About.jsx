@@ -140,6 +140,9 @@ const About = () => {
               </div>
             </FadeIn>
           </div>
+
+          {/* Skills Grid Sections */}
+          
         </div>
       </RadialGradientBackground>
     </section>
