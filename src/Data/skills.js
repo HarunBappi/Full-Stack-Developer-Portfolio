@@ -1,70 +1,95 @@
+import { Database } from "lucide-react";
 import {
-  FileCode,
-  Palette,
-  Database,
-  Server,
-  GitBranch,
-  Globe,
-  Layout
-} from "lucide-react";
+  SiReact,
+  SiJavascript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiRedux,
+  SiNodedotjs,
+  SiGit,
+  SiFigma,
+  SiVite,
+} from "react-icons/si";
 
-const skills = [
+import { TbDeviceMobileCode } from "react-icons/tb";
+import { TbApi } from "react-icons/tb";
+
+export const skills = [
   {
     id: 1,
-    name: "CSS / Tailwind",
-    icon: Palette,
-    level: "Advanced",
-    experience: "2+ years"
+    name: "React.js",
+    icon: SiReact,
+    level: "Expert",
+    experience: "2+ Years",
   },
   {
     id: 2,
     name: "JavaScript",
-    icon: FileCode,
-    level: "Advanced",
-    experience: "1.5+ years"
+    icon: SiJavascript,
+    level: "Expert",
+    experience: "2+ Years",
   },
   {
     id: 3,
-    name: "React",
-    icon: FileCode,
+    name: "Next.js",
+    icon: SiNextdotjs,
     level: "Advanced",
-    experience: "1+ years"
+    experience: "1+ Year",
   },
   {
     id: 4,
-    name: "Next.js",
-    icon: Globe,
-    level: "Intermediate",
-    experience: "1+ year"
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    level: "Expert",
+    experience: "2+ Years",
   },
   {
     id: 5,
-    name: "Responsive Design",
-    icon: Layout,
-    level: "Advanced",
-    experience: "2+ years"
+    name: "Redux",
+    icon: SiRedux,
+    level: "Intermediate",
+    experience: "1+ Year",
   },
   {
     id: 6,
     name: "Node.js",
-    icon: Server,
+    icon: SiNodedotjs,
     level: "Intermediate",
-    experience: "1+ year"
+    experience: "1+ Year",
   },
   {
     id: 7,
-    name: "MongoDB",
-    icon: Database,
-    level: "Intermediate",
-    experience: "1+ year"
+    name: "REST APIs",
+    icon: TbApi,
+    level: "Advanced",
+    experience: "2+ Years",
   },
   {
     id: 8,
     name: "Git & GitHub",
-    icon: GitBranch,
+    icon: SiGit,
+    level: "Advanced",
+    experience: "1+ Year",
+  },
+  {
+    id: 9,
+    name: "Responsive Design",
+    icon: TbDeviceMobileCode,
+    level: "Expert",
+    experience: "2+ Years",
+  },
+  {
+    id: 10,
+    name: "Figma",
+    icon: SiFigma,
     level: "Intermediate",
-    experience: "1.5+ years"
-  }
+    experience: "1+ Year",
+  },
+  {
+    id: 11,
+    name: "Vite",
+    icon: SiVite,
+    level: "Advanced",
+    experience: "1+ Year",
+  },
 ];
-
-export default skills;

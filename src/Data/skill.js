@@ -1,3 +1,4 @@
+import { Database } from "lucide-react";
 import {
   SiReact,
   SiJavascript,
@@ -58,37 +59,9 @@ export const skill = [
   },
   {
     id: 7,
-    name: "REST APIs",
-    icon: TbApi,
-    level: "Advanced",
-    experience: "2+ Years",
-  },
-  {
-    id: 8,
-    name: "Git & GitHub",
-    icon: SiGit,
+    name: "MongoDB",
+    icon: Database,
     level: "Intermediate",
-    experience: "1+ Year",
-  },
-  {
-    id: 9,
-    name: "Responsive Design",
-    icon: TbDeviceMobileCode,
-    level: "Advanced",
-    experience: "2+ Years",
-  },
-  {
-    id: 10,
-    name: "Figma",
-    icon: SiFigma,
-    level: "Intermediate",
-    experience: "1+ Year",
-  },
-  {
-    id: 11,
-    name: "Vite",
-    icon: SiVite,
-    level: "Intermediate",
-    experience: "1+ Year",
+    experience: "1+ year"
   },
 ];
