@@ -55,9 +55,13 @@ const Skills = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">My Experties</span>
+              <span className="text-sm font-medium text-primary">
+                My Experties
+              </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-normal text-white mb-4">Skill & Technologies</h2>
+            <h2 className="text-4xl lg:text-5xl font-normal text-white mb-4">
+              Skill & Technologies
+            </h2>
             <p className="text-xl text-white/60 max-w-2xl mx-auto">
               A Comprehensive overview of my Technical skills and proficiency
               levels.
@@ -72,7 +76,9 @@ const Skills = () => {
                 <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 group">
                   <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
                     <div className="w-1 h-8 bg-linear-to-b from-primary/30 to-primary/10 rounded-full"></div>
-                    <h3 className="text-xl font-medium text-white">{category}</h3>
+                    <h3 className="text-xl font-medium text-white">
+                      {category}
+                    </h3>
                   </div>
                   {/* Skill List */}
                   <div className="space-y-5">
@@ -87,8 +93,12 @@ const Skills = () => {
                                 <IconComponent className="w-4 h-4 text-primary"></IconComponent>
                               </div>
                               <div>
-                                <div className="text-sm font-medium text-white">{skill.name}</div>
-                                <div className="text-xs text-white/50">{skill.experience}</div>
+                                <div className="text-sm font-medium text-white">
+                                  {skill.name}
+                                </div>
+                                <div className="text-xs text-white/50">
+                                  {skill.experience}
+                                </div>
                               </div>
                             </div>
                             <span
