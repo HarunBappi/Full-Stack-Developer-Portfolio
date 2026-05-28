@@ -56,7 +56,7 @@ const Projects = () => {
 
   //   Category icons Maping
   const categoryIcons = {
-    'All': Target,
+    All: Target,
     "Web Apps": Globe,
     "UI Components": Palette,
     "Full Stack": Zap,
@@ -88,23 +88,19 @@ const Projects = () => {
           <div className="flex flex-wrap justify-center gap-3 mb-16">
             {categories.map((category) => (
               <button
-                className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category ? "text-white" : "text-white/60 hover:text-white"}`}
                 key={category}
                 onClick={() => handleCategoryChange(category)}
+                className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category ? "bg-primary/10 border-primary/40 text-white" : "bg-white/5 border-white/10 text-white/60 hover:text-white hover:bg-white/10"}`}
               >
-                <div
-                  className={`absolute inset-0 rounded-full transition-all duration-300 ${activeCategory === category ? "bg-primary/10 opacity-100" : "bg-white/5 border border-white/10 group-hover:bg-white/10"}`}
-                >
-                  <div className="relative flex items-center gap-2">
-                    {React.createElement(categoryIcons[category], {
-                      className: "w-4 h-4",
-                    })}
-                    <span className="text-sm">{category}</span>
-                  </div>
-                  {activeCategory === category && (
-                    <div className="absolute inset-0 rounded-full bg-primary blur-xl opacity-50 -z-10"></div>
-                  )}
+                <div className="relative flex items-center gap-2">
+                  {React.createElement(categoryIcons[category], {
+                    className: "w-4 h-4",
+                  })}
+                  <span className="text-sm font-medium">{category}</span>
                 </div>
+                {activeCategory === category && (
+                  <div className="absolute inset-0 bg-primary blur-lg opacity-65"></div>
+                )}
               </button>
             ))}
           </div>
