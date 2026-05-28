@@ -5,6 +5,8 @@ import About from './Components/Sections/About';
 import Skills from './Components/Sections/Skills';
 import Projects from './Components/Sections/Projects';
 import Services from './Components/Sections/Services';
+import Contact from './Components/Sections/Contact';
+// import Testimonials from './Components/Sections/Testimonials';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
           <Skills></Skills>
           <Projects></Projects>
           <Services></Services>
+          {/* <Testimonials></Testimonials> */}
+          <Contact></Contact>
         </main>
     </div>
   );
