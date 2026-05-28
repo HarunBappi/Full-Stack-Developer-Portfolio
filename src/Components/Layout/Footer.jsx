@@ -59,7 +59,8 @@ const Footer = () => {
           </FadeIn>
           {/* Quick Links */}
           <FadeIn delay={100}>
-            <div>
+            <div className="md:flex items-center justify-center">
+                <div>
               <h4 className="text-white font-semibold mb-6 text-lg">
                 Quick Links
               </h4>
@@ -76,6 +77,7 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
+            </div>
             </div>
           </FadeIn>
           {/* Connetc With Me */}

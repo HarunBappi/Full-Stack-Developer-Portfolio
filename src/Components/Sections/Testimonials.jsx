@@ -35,7 +35,7 @@
 //     { value: "5*", label: "Average Rating" },
 //   ];
 //   return (
-//     <section id="testimonials" className="">
+//     <section id="testimonials" className="py-5">
 //       <div className="">
 //         <div className=""></div>
 //       </div>
