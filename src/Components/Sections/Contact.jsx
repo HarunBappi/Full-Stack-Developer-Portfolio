@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import { BsGithub, BsTwitter } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { LiaLinkedin } from "react-icons/lia";
 import FadeIn from "../Animations/FadeIn";

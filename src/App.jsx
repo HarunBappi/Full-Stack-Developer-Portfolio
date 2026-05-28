@@ -6,11 +6,12 @@ import Skills from './Components/Sections/Skills';
 import Projects from './Components/Sections/Projects';
 import Services from './Components/Sections/Services';
 import Contact from './Components/Sections/Contact';
+import Footer from './Components/Layout/Footer';
 // import Testimonials from './Components/Sections/Testimonials';
 
 const App = () => {
   return (
-    <div className='min-h-screen bg-black pb-[100vh]'>
+    <div className='min-h-screen bg-black'>
         <Navbar></Navbar>
         <main>
           <Hero></Hero>
@@ -21,6 +22,7 @@ const App = () => {
           {/* <Testimonials></Testimonials> */}
           <Contact></Contact>
         </main>
+        <Footer></Footer>
     </div>
   );
 };
