@@ -13,12 +13,12 @@ import FadeIn from "../Animations/FadeIn";
 import ProjectCard from "../Ui/ProjectCard";
 
 const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("All");
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef(null);
 
   const filteredProjects =
-    activeCategory === "all"
+    activeCategory === "All"
       ? projects
       : projects.filter((project) => project.category === activeCategory);
 
@@ -56,7 +56,7 @@ const Projects = () => {
 
   //   Category icons Maping
   const categoryIcons = {
-    All: Target,
+    'All': Target,
     "Web Apps": Globe,
     "UI Components": Palette,
     "Full Stack": Zap,
@@ -86,7 +86,7 @@ const Projects = () => {
         {/* Category Filtered */}
         <FadeIn delay={100}>
           <div className="flex flex-wrap justify-center gap-3 mb-16">
-            {categories.map((category) => {
+            {categories.map((category) => (
               <button
                 className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category ? "text-white" : "text-white/60 hover:text-white"}`}
                 key={category}
@@ -105,8 +105,8 @@ const Projects = () => {
                     <div className="absolute inset-0 rounded-full bg-primary blur-xl opacity-50 -z-10"></div>
                   )}
                 </div>
-              </button>;
-            })}
+              </button>
+            ))}
           </div>
         </FadeIn>
         {/* Projects Carousel */}
@@ -118,7 +118,10 @@ const Projects = () => {
             >
               <div className="flex gap-6 pb-4">
                 {filteredProjects.map((project) => (
-                  <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start" key={project.id}>
+                  <div
+                    className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start"
+                    key={project.id}
+                  >
                     <ProjectCard project={project}></ProjectCard>
                   </div>
                 ))}
