@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { BsGithub, BsTwitter } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { LiaLinkedin } from "react-icons/lia";
 import FadeIn from "../Animations/FadeIn";
-import { Icon, Mail, MapPin, MessagesSquare, Send } from "lucide-react";
+import {  Mail, MapPin, MessagesSquare, Send } from "lucide-react";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "../../utilities/constants";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    user_email: "",
     message: "",
   });
   const [status, setStatus] = useState({ type: "", message: "" });
@@ -20,23 +22,63 @@ const Contact = () => {
     });
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus({ type: "Error", message: "Please fill in all fields" });
-      return;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setStatus({ type: "Error", message: "Please enter a valid email" });
-      return;
-    }
+  e.preventDefault();
+
+  if (!formData.from_name || !formData.user_email || !formData.message) {
     setStatus({
-      type: "success",
-      message: "Message sent successfully! I'll get back to you soon.",
+      type: "error",
+      message: "Please fill in all fields",
     });
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus({ type: "", message: "" }), 5000);
-  };
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(formData.user_email)) {
+    setStatus({
+      type: "error",
+      message: "Please enter a valid email",
+    });
+    return;
+  }
+
+  emailjs
+    .sendForm(
+      "service_b8rgtwl",
+      "template_s7w981f",
+      form.current,
+      "1x1CBS1LG-6Qr53Yt"
+    )
+    .then(
+      () => {
+        setStatus({
+          type: "success",
+          message: "Message sent successfully!",
+        });
+
+        setFormData({
+          from_name: "",
+          user_email: "",
+          message: "",
+        });
+
+        setTimeout(() => {
+          setStatus({
+            type: "",
+            message: "",
+          });
+        }, 5000);
+      },
+      (error) => {
+        console.log(error);
+
+        setStatus({
+          type: "error",
+          message: "Failed to send message. Please try again.",
+        });
+      }
+    );
+};
 
   const socialIcons = {
     github: BsGithub,
@@ -74,7 +116,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <FadeIn delay={100}>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
@@ -85,8 +127,8 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
-                    name="name"
-                    value={formData.name}
+                    name="from_name"
+                    value={formData.from_name}
                     onChange={handleChange}
                     placeholder="Your Name"
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all duration-300"
@@ -102,8 +144,8 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
-                    name="email"
-                    value={formData.email}
+                    name="user_email"
+                    value={formData.user_email}
                     onChange={handleChange}
                     placeholder="Your .email@example.com"
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all duration-300"
@@ -148,7 +190,9 @@ const Contact = () => {
           <FadeIn delay={200}>
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold text-white mb-4">Let's Connect</h3>
+                <h3 className="text-2xl font-semibold text-white mb-4">
+                  Let's Connect
+                </h3>
                 <p className="text-white/60 leading-relaxed">
                   I'm always open to discussing new projects, creative ideas, or
                   opportunities to be part of your vision. Feel free to reach
@@ -163,7 +207,10 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-sm text-white/60 mb-1">Email</p>
-                      <a href={`mailto: ${PERSONAL_INFO.email}`} className="text-white hover:text-[#A8FF8D] transition-colors font-medium">
+                      <a
+                        href={`mailto: ${PERSONAL_INFO.email}`}
+                        className="text-white hover:text-[#A8FF8D] transition-colors font-medium"
+                      >
                         {PERSONAL_INFO.email}
                       </a>
                     </div>
@@ -177,7 +224,9 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-sm text-white/60 mb-1">Location</p>
-                      <p className="text-white font-medium">{PERSONAL_INFO.location}</p>
+                      <p className="text-white font-medium">
+                        {PERSONAL_INFO.location}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -186,21 +235,20 @@ const Contact = () => {
             <div className="mt-5">
               <p className="text-sm text-white/60 mb-4">Connetc with Me</p>
               <div className="flex gap-4">
-                {Object.entries(SOCIAL_LINKS)
-                  .map(([platform, url]) => {
-                    const Icon = socialIcons[platform];
-                    return Icon ? (
-                      <a
-                        key={platform}
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:border-primary/50 hover:scale-110 transition-all duration-300 group"
-                      >
-                        <Icon className="w-6 h-6 text-white/60 group-hover:text-primary transition-colors"></Icon>
-                      </a>
-                    ) : null;
-                  })}
+                {Object.entries(SOCIAL_LINKS).map(([platform, url]) => {
+                  const Icon = socialIcons[platform];
+                  return Icon ? (
+                    <a
+                      key={platform}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:border-primary/50 hover:scale-110 transition-all duration-300 group"
+                    >
+                      <Icon className="w-6 h-6 text-white/60 group-hover:text-primary transition-colors"></Icon>
+                    </a>
+                  ) : null;
+                })}
               </div>
             </div>
           </FadeIn>
