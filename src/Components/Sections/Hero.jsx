@@ -14,10 +14,10 @@ import {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <RadialGradientBackground variant="hero"></RadialGradientBackground>
       {/* Contant Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-7 lg:px-8 py-20 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-7 lg:px-8 py-25 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* left Column - Content */}
           <div className="text-left">
@@ -30,8 +30,8 @@ const Hero = () => {
               </div>
             </FadeIn>
             <FadeIn delay={100}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight">
-                React.js Developer Portfolio
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-white mb-6 leading-tight">
+                Full Stack Developer
               </h1>
             </FadeIn>
             <FadeIn delay={200}>
@@ -46,7 +46,7 @@ const Hero = () => {
                 onClick={() => scrollToSection("contact")}
                 className="inline-flex gap-0 items-center mb-12 group"
               >
-                <div className="relative z-10 bg-white text-[#212121] rounded-[17px] px-6.5 py-3.25 text-base font-medium border border-white">
+                <div className="relative z-10 bg-white text-[#212121] rounded-[17px] px-6.5 py-3.25 text-base font-medium border border-white hover:bg-white/90 transition-all duration-300">
                   Get in Touch
                 </div>
               </button>

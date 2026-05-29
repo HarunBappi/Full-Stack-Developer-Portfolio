@@ -16,7 +16,7 @@ import { skill } from "../../Data/skill";
 
 const About = () => {
   return (
-    <section id="about" className="relative py-5 bg-black overflow-hidden">
+    <section id="about" className="relative py-5 overflow-hidden">
       <RadialGradientBackground variant="about">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Grid */}
