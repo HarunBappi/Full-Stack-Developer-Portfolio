@@ -11,7 +11,7 @@ import Footer from './Components/Layout/Footer';
 
 const App = () => {
   return (
-    <div className='min-h-screen bg-black'>
+    <div className='min-h-screen bg-[#f8fafc] dark:bg-black'>
         <Navbar></Navbar>
         <main>
           <Hero></Hero>

@@ -5,8 +5,7 @@
 @theme {
   --font-display: "Urbanist", sans-serif;
   --breakpoint-3xl: 1920px;
-  --color-primary: #22c55e;
-  --color-primary-dark: #8dff69;
+  --color-primary: #8dff69;
 }
 
 @layer base {
@@ -72,42 +71,41 @@
     100% {
       opacity: 0.3;
     }
-    50%{
+    50% {
       opacity: 0.5;
     }
   }
 
   /* Utility Classes */
-.animate-fadeIn{
-  animation: fadeIn 0.5s ease-out;
-}
-.animate-pulse{
-  animation: pulse 3s ease-in-out infinite;
-}
-.animate-spin-slow{
-  animation: spin 8s linear infinite;
-}
-@keyframes spin {
-  from{
-    transform: rotate(0deg);
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
   }
-  to{
-    transform: rotate(360deg);
+  .animate-pulse {
+    animation: pulse 3s ease-in-out infinite;
   }
-}
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
-/* Line Clamp */
-.line-clamp-2{
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.line-clamp-3{
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
+  /* Line Clamp */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }

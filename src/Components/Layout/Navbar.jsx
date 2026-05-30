@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NAV_LINKS, PERSONAL_INFO } from "../../utilities/constants";
 import { scrollToSection, useScrollSpy } from "../../Hooks/useScrollSpy";
 import { Code, Menu, X } from "lucide-react";
+import DarkLightMood from "../DarkLightToggol/DarkLightMood";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,35 +51,43 @@ const Navbar = () => {
               </button>
             ))}
           </nav>
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-2">
+          {/* Hire Me Button for Large Device */}
+          <div className="hidden md:flex items-center justify-center gap-2">
             <button
               onClick={() => handleNavClick("contact")}
-              className="px-7 py-3.5 bg-white text-[#212121] font-medium text-base
+              className="px-4 py-2 bg-white text-[#212121] font-medium text-base
                  rounded-[17px] border border-white hover:bg-white/90 transition-all duration-300"
             >
               Hire Me
             </button>
+            
+              <DarkLightMood></DarkLightMood>
+          
           </div>
           {/* Mobile Menu Button*/}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-4 text-white hover:text-white/80 transition-colors"
-            aria-label="menu"
-            aria-expanded={isMenuOpen}
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6"></X>
-            ) : (
-              <Menu className="w-6 h-6"></Menu>
-            )}
-          </button>
+          <div className="md:hidden flex gap-1 items-center">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-4 text-white hover:text-white/80 transition-colors"
+              aria-label="menu"
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6"></X>
+              ) : (
+                <Menu className="w-6 h-6"></Menu>
+              )}
+            </button>
+            <div className="md:hidden mt-4">
+              <DarkLightMood ></DarkLightMood>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
+        className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? "max-h-97.5 opacity-100" : "max-h-0 opacity-0"}`}
       >
         <div className="bg-black/95 backdrop-blur-lg border-t border-white/10 px-5 py-6 space-y-3">
           {NAV_LINKS.map((link) => (
@@ -90,6 +99,7 @@ const Navbar = () => {
               {link.label}
             </button>
           ))}
+          {/* Hire Me button */}
           <button
             onClick={() => handleNavClick("contact")}
             className="w-full px-7 py-3.5 bg-white text-[#212121] font-medium text-base
