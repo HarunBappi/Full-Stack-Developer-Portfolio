@@ -12,14 +12,14 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Portfolio Website",
-    description: "A modern responsive portfolio with smooth animations and clean UI.",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
+    title: "Life simpler Website",
+    description: "HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.",
+    image: "hero.png",
     category: "Web Apps",
-    technologist: ["React", "Tailwind CSS"],
+    technologist: ["JavaScript","React", "Tailwind CSS"],
     metrics: "95+ Lighthouse score",
-    demoUrl: "https://portfolio-demo.vercel.app",
-    githubUrl: "https://github.com/yourusername/portfolio"
+    demoUrl: "https://hero-io-apps-zeta.vercel.app",
+    githubUrl: "https://github.com/HarunBappi/Hero-io-Apps"
   },
   {
     id: 3,
@@ -78,14 +78,14 @@ export const projects = [
   },
   {
     id: 8,
-    title: "Modal & Form Components",
-    description: "Custom modal, input, and form validation components.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
-    category: "UI Components",
-    technologist: ["React", "Tailwind CSS"],
+    title: "Players Selection App",
+    description: "Assemble Your Ultimate Dream 11 Cricket Team.",
+    image: "cricket-app.png",
+    category: "Web Apps",
+    technologist: ["JavaScript", "Tailwind CSS"],
     metrics: "Reusable & accessible",
-    demoUrl: "https://form-ui.vercel.app",
-    githubUrl: "https://github.com/yourusername/form-components"
+    demoUrl: "https://cricket-buzz-one.vercel.app",
+    githubUrl: "https://github.com/HarunBappi/Cricket-Buzz"
   }
 ];
 

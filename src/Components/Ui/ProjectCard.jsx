@@ -50,7 +50,7 @@ const ProjectCard = ({ project }) => {
       <div className="p-6 space-y-4">
         <div>
           <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-[#A8FF8D] transition-colors duration-300">{title}</h3>
-          <p className="text-white/60 text-sm leading-relaxed line-clamp-2 ">{description}</p>
+          <p className="text-white/60 text-sm leading-relaxed line-clamp-2" title={description}>{description}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {technologist.map((tech, index) => (
